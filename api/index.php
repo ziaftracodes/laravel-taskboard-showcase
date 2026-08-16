@@ -1,5 +1,10 @@
 <?php
 
+// Enable error reporting for debugging serverless deployment exceptions
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 // Create required storage directories in /tmp for write access on Vercel
 if (isset($_SERVER['VERCEL']) || isset($_ENV['VERCEL'])) {
     $directories = [
